@@ -1,5 +1,23 @@
 ﻿@{
     Layout = null;
+
+    var movieTitle = "Big Hero 6";
+    var yearsRelease = "2014";
+    var storyLine = "<p>When a devastating event befalls the city of San Fransokyo and catapults " +
+                    "Hiro into the midst of danger, he turns to Baymax and his close friends " +
+                    "adrenaline junkie Go Go Tomago, neatnik Wasabi, chemistry whiz Honey Lemon " +
+                    "and fanboy Fred. Determined to uncover the mystery, Hiro transforms his " +
+                    "friends into a band of high-tech heroes called &quot;Big Hero 6&quot;.</p>";
+    var genres = new string[]
+    {
+        "Animation",
+        "Action",
+        "Adventure",
+        "Comedy",
+        "Drama",
+        "Family",
+        "Sci-Fi"
+    };
 }
 
 <!DOCTYPE html>
@@ -11,7 +29,14 @@
 </head>
 <body>
     <div>
-        <h1>My First View</h1>
+        <h1>@movieTitle - <small>@yearsRelease</small></h1>
+        <strong>Storyline : </strong>
+        @Html.Raw(storyLine)
+
+        <strong>Genre : </strong>
+        <ul>
+            <li></li>
+        </ul>
     </div>
 </body>
 </html>
