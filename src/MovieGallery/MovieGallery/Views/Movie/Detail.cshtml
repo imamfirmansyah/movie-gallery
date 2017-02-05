@@ -1,32 +1,21 @@
 ﻿@{
-    Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.MovieTitle = "Big Hero 6";
 }
 
-<!DOCTYPE html>
+<h1>
+    @ViewBag.MovieTitle - <small>@ViewBag.YearsRelease</small>
+</h1>
+<h5>Storyline : </h5>
+@Html.Raw(ViewBag.StoryLine)
 
-<html lang="en">
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Movie Gallery</title>
-</head>
-<body>
-    <div>
-        <h1>
-            @ViewBag.MovieTitle - <small>@ViewBag.YearsRelease</small>
-        </h1>
-        <h5>Storyline : </h5>
-        @Html.Raw(ViewBag.StoryLine)
-
-        @if (ViewBag.Genres.Length > 0)
+@if (ViewBag.Genres.Length > 0)
+{
+    <h5>Genre : </h5>
+    <ul>
+        @foreach (var genre in ViewBag.Genres)
         {
-            <h5>Genre : </h5>
-            <ul>
-                @foreach (var genre in ViewBag.Genres)
-                {
-                    <li>@genre</li>
-                }
-            </ul>
+            <li>@genre</li>
         }
-    </div>
-</body>
-</html>
+    </ul>
+}
