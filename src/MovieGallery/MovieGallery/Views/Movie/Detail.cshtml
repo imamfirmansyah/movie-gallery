@@ -30,13 +30,19 @@
 <body>
     <div>
         <h1>@movieTitle - <small>@yearsRelease</small></h1>
-        <strong>Storyline : </strong>
+        <h5>Storyline : </h5>
         @Html.Raw(storyLine)
-
-        <strong>Genre : </strong>
-        <ul>
-            <li></li>
-        </ul>
+        
+        @if (genres.Length > 0)
+        {
+            <h5>Genre : </h5>
+            <ul>
+                @foreach (var genre in genres)
+                {
+                    <li>@genre</li>
+                }
+            </ul>
+        }
     </div>
 </body>
 </html>
