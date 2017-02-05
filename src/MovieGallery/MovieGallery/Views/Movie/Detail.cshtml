@@ -4,17 +4,19 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title></title>
+    <title>Movie Gallery</title>
 </head>
 <body>
     <div>
-        <h1>@ViewBag.MovieTitle - <small>@ViewBag.YearsRelease</small></h1>
+        <h1>
+            @ViewBag.MovieTitle - <small>@ViewBag.YearsRelease</small>
+        </h1>
         <h5>Storyline : </h5>
         @Html.Raw(ViewBag.StoryLine)
-        
+
         @if (ViewBag.Genres.Length > 0)
         {
             <h5>Genre : </h5>
