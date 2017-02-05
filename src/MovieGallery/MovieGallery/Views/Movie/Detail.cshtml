@@ -1,23 +1,5 @@
 ﻿@{
     Layout = null;
-
-    var movieTitle = "Big Hero 6";
-    var yearsRelease = "2014";
-    var storyLine = "<p>When a devastating event befalls the city of San Fransokyo and catapults " +
-                    "Hiro into the midst of danger, he turns to Baymax and his close friends " +
-                    "adrenaline junkie Go Go Tomago, neatnik Wasabi, chemistry whiz Honey Lemon " +
-                    "and fanboy Fred. Determined to uncover the mystery, Hiro transforms his " +
-                    "friends into a band of high-tech heroes called &quot;Big Hero 6&quot;.</p>";
-    var genres = new string[]
-    {
-        "Animation",
-        "Action",
-        "Adventure",
-        "Comedy",
-        "Drama",
-        "Family",
-        "Sci-Fi"
-    };
 }
 
 <!DOCTYPE html>
@@ -29,15 +11,15 @@
 </head>
 <body>
     <div>
-        <h1>@movieTitle - <small>@yearsRelease</small></h1>
+        <h1>@ViewBag.MovieTitle - <small>@ViewBag.YearsRelease</small></h1>
         <h5>Storyline : </h5>
-        @Html.Raw(storyLine)
+        @Html.Raw(ViewBag.StoryLine)
         
-        @if (genres.Length > 0)
+        @if (ViewBag.Genres.Length > 0)
         {
             <h5>Genre : </h5>
             <ul>
-                @foreach (var genre in genres)
+                @foreach (var genre in ViewBag.Genres)
                 {
                     <li>@genre</li>
                 }
