@@ -2,7 +2,7 @@
 
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
-    Model.MovieTitle = "Big Hero 6";
+    Model.MovieTitle = @Model.MovieTitle;
 }
 
 <h2>@Model.MovieTitle - <small>@Model.YearsRelease</small></h2>

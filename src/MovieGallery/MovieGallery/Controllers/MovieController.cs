@@ -11,31 +11,24 @@ namespace MovieGallery.Controllers
     {
         public ActionResult Detail()
         {
-            var movieGallery = new Movie()
+            var movie = new Movie()
             {
-                MovieTitle = "Big Hero 6",
-                YearsRelease = "2014",
-                StoryLineHtml = "<p>When a devastating event befalls the city of San Fransokyo and catapults " +
-                            "Hiro into the midst of danger, he turns to Baymax and his close friends " +
-                            "adrenaline junkie Go Go Tomago, neatnik Wasabi, chemistry whiz Honey Lemon " +
-                            "and fanboy Fred. Determined to uncover the mystery, Hiro transforms his " +
-                            "friends into a band of high-tech heroes called &quot;Big Hero 6&quot;.</p>",
+                MovieTitle = "Wreck-It Ralph",
+                YearsRelease = "2012",
+                StoryLineHtml = "<p>Wreck-It Ralph longs to be as beloved as his game's perfect Good Guy, Fix-It Felix. Problem is, nobody loves a Bad Guy. But they do love heroes... so when a modern, first-person shooter game arrives featuring tough-as-nails Sergeant Calhoun, Ralph sees it as his ticket to heroism and happiness. He sneaks into the game with a simple plan -- win a medal -- but soon wrecks everything, and accidentally unleashes a deadly enemy that threatens every game in the arcade. Ralph's only hope? Vanellope von Schweetz, a young troublemaking &quot;glitch&quot; from a candy-coated cart racing game who might just be the one to teach Ralph what it means to be a Good Guy. But will he realize he is good enough to become a hero before it's &quot;Game Over&quot; for the entire arcade?.</p>",
                 Favorite = true,
-                IssueNumber = "20",
+                IssueNumber = "21",
                 Genres = new Genre[]
                 {
                     new Genre() { Name = "Animation" },
-                    new Genre() { Name = "Action" },
                     new Genre() { Name = "Adventure" },
                     new Genre() { Name = "Comedy" },
-                    new Genre() { Name = "Drama" },
                     new Genre() { Name = "Family" },
                     new Genre() { Name = "Sci-Fi" },
                 }
-
             };
 
-            return View(movieGallery);
+            return View(movie);
         }
     }
 }
