@@ -1,21 +1,23 @@
-﻿@{
+﻿@model MovieGallery.Models.Movie
+
+@{
     Layout = "~/Views/Shared/_Layout.cshtml";
-    ViewBag.MovieTitle = "Big Hero 6";
+    Model.MovieTitle = "Big Hero 6";
 }
 
 <h1>
-    @ViewBag.MovieTitle - <small>@ViewBag.YearsRelease</small>
+    @Model.MovieTitle - <small>@Model.YearsRelease</small>
 </h1>
 <h5>Storyline : </h5>
-@Html.Raw(ViewBag.StoryLine)
+@Html.Raw(Model.StoryLineHtml)
 
-@if (ViewBag.Genres.Length > 0)
+@if (Model.Genres.Length > 0)
 {
     <h5>Genre : </h5>
     <ul>
-        @foreach (var genre in ViewBag.Genres)
+        @foreach (var genre in Model.Genres)
         {
-            <li>@genre</li>
+            <li>@genre.Name</li>
         }
     </ul>
 }
