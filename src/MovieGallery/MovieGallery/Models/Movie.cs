@@ -12,5 +12,10 @@ namespace MovieGallery.Models
         public string YearsRelease { get; set; }
         public string StoryLineHtml { get; set; }
         public Genre[] Genres { get; set; }
+
+        public string CoverMovieFileName
+        {
+            get { return MovieTitle.Replace(" ", "-").ToLower() + ".jpg"; }
+        }
     }
 }
