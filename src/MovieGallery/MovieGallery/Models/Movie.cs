@@ -11,7 +11,14 @@ namespace MovieGallery.Models
         public string MovieTitle { get; set; }
         public string YearsRelease { get; set; }
         public string StoryLineHtml { get; set; }
+        public bool Favorite { get; set; }
+        public string IssueNumber { get; set; }
         public Genre[] Genres { get; set; }
+
+        public string DisplayText
+        {
+            get { return MovieTitle + " #" + IssueNumber; }
+        }
 
         public string CoverMovieFileName
         {

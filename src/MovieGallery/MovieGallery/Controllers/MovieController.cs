@@ -20,6 +20,8 @@ namespace MovieGallery.Controllers
                             "adrenaline junkie Go Go Tomago, neatnik Wasabi, chemistry whiz Honey Lemon " +
                             "and fanboy Fred. Determined to uncover the mystery, Hiro transforms his " +
                             "friends into a band of high-tech heroes called &quot;Big Hero 6&quot;.</p>",
+                Favorite = true,
+                IssueNumber = "20",
                 Genres = new Genre[]
                 {
                     new Genre() { Name = "Animation" },

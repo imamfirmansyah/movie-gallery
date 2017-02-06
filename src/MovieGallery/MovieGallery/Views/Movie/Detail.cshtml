@@ -5,19 +5,31 @@
     Model.MovieTitle = "Big Hero 6";
 }
 
-<h1>
-    @Model.MovieTitle - <small>@Model.YearsRelease</small>
-</h1>
-<h5>Storyline : </h5>
-@Html.Raw(Model.StoryLineHtml)
+<h2>@Model.MovieTitle - <small>@Model.YearsRelease</small></h2>
 
-@if (Model.Genres.Length > 0)
-{
-    <h5>Genre : </h5>
-    <ul>
-        @foreach (var genre in Model.Genres)
-        {
-            <li>@genre.Name</li>
-        }
-    </ul>
-}
+<div class="row">
+    <div class="col-md-6">
+        <div class="well">
+            <h5><label>Movie Title :</label> @Model.MovieTitle</h5>
+            <h5><label>Issue # :</label> @Model.IssueNumber</h5>
+            <h5><label>Favorite :</label> @(Model.Favorite ? "Yes" : "No")</h5>
+            @if (Model.Genres.Length > 0)
+            {
+                <h5>Genre : </h5>
+                <div>
+                    <ul>
+                        @foreach (var genre in Model.Genres)
+                        {
+                            <li>@genre.Name</li>
+                        }
+                    </ul>
+                </div>
+            }
+        </div>
+        <h5>Storyline</h5>
+        @Html.Raw(Model.StoryLineHtml)
+    </div>
+    <div class="col-md-6">
+        <img src="/Images/@Model.CoverMovieFileName" alt="@Model.DisplayText" class="img-responsive" />
+    </div>
+</div>
