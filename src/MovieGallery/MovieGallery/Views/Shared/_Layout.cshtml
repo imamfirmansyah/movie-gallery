@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movie Gallery</title>
+    <title>@ViewBag.Title - Movie Gallery</title>
     <link href="~/Content/site.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
@@ -29,6 +29,16 @@
             </div>
         </div>
     </div>
+
+    @if (ViewBag.ShowBackBar != null && ViewBag.ShowBackBar)
+    {
+        <div class="backbar">
+            <div class="container">
+                @Html.ActionLink("Return to List", "Index", null, null, new { @class = "btn btn-default" })
+            </div>
+        </div>
+    }
+
     <div class="container body-content">
         @RenderBody()
         <hr />

@@ -1,7 +1,8 @@
 ﻿@model MovieGallery.Models.Movie
 
 @{
-    Model.MovieTitle = @Model.MovieTitle;
+    ViewBag.Title = @Model.MovieTitle;
+    ViewBag.ShowBackBar = true;
 }
 
 <h2>@Model.MovieTitle - <small>@Model.YearsRelease</small></h2>
