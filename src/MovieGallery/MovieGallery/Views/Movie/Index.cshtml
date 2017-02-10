@@ -1,7 +1,19 @@
-﻿
+﻿@model MovieGallery.Models.Movie[]
+
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Movie Gallery";
 }
 
-<h2>Index</h2>
+<h2>@ViewBag.Title</h2>
 
+<div class="row">
+    @foreach (var movie in Model)
+    {
+        <div class="col-md-3">
+            <h4 class="text-center">@movie.MovieTitle</h4>
+            <img src="/Images/@movie.CoverMovieFileName" 
+                 alt="@movie.DisplayText" 
+                 class="img-responsive">
+        </div>
+    }
+</div>

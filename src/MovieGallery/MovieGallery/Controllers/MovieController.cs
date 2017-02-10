@@ -19,9 +19,9 @@ namespace MovieGallery.Controllers
 
         public ActionResult Index()
         {
-            var movies = _movieRepository.GetMovies();
+            var movie = _movieRepository.GetMovies();
 
-            return View(movies);
+            return View(movie);
         }
 
         public ActionResult Detail(int? id)
