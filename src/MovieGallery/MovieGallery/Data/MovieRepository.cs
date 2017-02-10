@@ -70,6 +70,11 @@ namespace MovieGallery.Data
             }
         };
 
+        public Movie[] GetMovies()
+        {
+            return _movieGalleries;
+        }
+
         public Movie GetMovie(int id)
         {
             Movie movieToReturn = null;
